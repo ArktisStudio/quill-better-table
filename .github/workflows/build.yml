@@ -1,12 +1,4 @@
 name: Build Quill Better Table
-author: gabidut
-
-runs:
-  using: "node20"
-  main: src/quill-better-table.js
-branding:
-    icon: "table"
-    color: "blue"
 
 on: [ push, pull_request ]
 jobs:
