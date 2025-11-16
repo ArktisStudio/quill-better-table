@@ -18,3 +18,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: Release Quill Better Table v${{ github.ref_name }}
+          tag_name: ${{ github.ref_name }}
+          files: |
+            dist/quill-better-table.css
+            dist/quill-better-table.js
+            dist/quill-better-table.min.js
