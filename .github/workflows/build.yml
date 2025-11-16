@@ -10,6 +10,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Install Dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
@@ -19,3 +23,8 @@ jobs:
             dist/quill-better-table.css
             dist/quill-better-table.js
             dist/quill-better-table.min.js
+permissions:
+  contents: write
+  packages: write
+  issues: write
+  pull-requests: write
