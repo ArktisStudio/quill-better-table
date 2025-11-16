@@ -1,0 +1,20 @@
+name: Build Quill Better Table
+author: gabidut
+
+runs:
+  using: "node20"
+  main: src/quill-better-table.js
+branding:
+    icon: "table"
+    color: "blue"
+
+on: [ push, pull_request ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
